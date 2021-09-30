@@ -1,5 +1,8 @@
 # vue-shopping-cart
 
+## Demo
+[Demo](https://aster0n.github.io/vue-shopping-cart/)
+
 ## Project setup
 ```
 npm install
