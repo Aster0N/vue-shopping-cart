@@ -324,8 +324,8 @@ html {
 			align-items: center;
 			font-family: "Poppins", sans-serif;
 			font-weight: bold;
-			background-color: $gray;
-			color: $secondary-color;
+			background-color: rgba($gray, 0.6);
+			color: #000;
 		}
 	}
 
