@@ -15,7 +15,7 @@
 					</ul>
 					<div class="cart">
 						<button
-							class="btn cart-btn"
+							class="btn cart-btn main-cart-btn"
 							@click="showCartContent = !showCartContent"
 						>
 							<span>
@@ -33,6 +33,11 @@
 									<circle cx="17" cy="22" r="2" />
 								</svg>
 							</span>
+							<span
+								v-show="cartContent.length"
+								class="products-number"
+								>{{ cartContent.length }}</span
+							>
 						</button>
 						<div class="cart-content" v-if="showCartContent">
 							<div class="cart-content-wrapper">
@@ -305,6 +310,25 @@ html {
 		padding: 10px;
 		text-align: center;
 	}
+	.main-cart-btn {
+		position: relative;
+
+		.products-number {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 20px;
+			height: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: "Poppins", sans-serif;
+			font-weight: bold;
+			background-color: $gray;
+			color: $secondary-color;
+		}
+	}
+
 	.cart-content {
 		z-index: 10;
 		max-height: 600px;
