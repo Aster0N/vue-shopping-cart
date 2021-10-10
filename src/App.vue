@@ -42,6 +42,14 @@
 						<div class="cart-content" v-if="showCartContent">
 							<div class="cart-content-wrapper">
 								<div
+									v-if="cartContent.length"
+									class="cart-price-amount"
+								>
+									<span>total amount: </span>
+									<span class="total-amount">{{ priceAmount }}</span
+									>$
+								</div>
+								<div
 									class="blank-cart-message"
 									v-if="!cartContent.length"
 								>
@@ -189,6 +197,7 @@ export default {
 			showCartContent: false,
 			products: productList,
 			totalProductsNumber: 0,
+			priceAmount: 0,
 		};
 	},
 	methods: {
@@ -196,6 +205,7 @@ export default {
 			let buttonParent = event.target.closest(".add-to-cart-wrapper");
 			buttonParent.classList.add("_btn-hover");
 			this.totalProductsNumber++;
+			this.priceAmount += product.price;
 			product.itemRange++;
 			return this.cartContent.push(product);
 		},
@@ -206,6 +216,7 @@ export default {
 			buttonParent.classList.remove("_btn-hover");
 			let itemInd = this.cartContent.indexOf(item);
 			this.totalProductsNumber -= item.itemRange;
+			this.priceAmount -= item.price * item.itemRange;
 			item.itemRange = 0;
 			return this.cartContent.splice(itemInd, 1);
 		},
@@ -219,6 +230,7 @@ export default {
 				this.cartContent.push(product);
 			}
 			this.totalProductsNumber++;
+			this.priceAmount += product.price;
 			return product.itemRange++;
 		},
 		shrinkRange(product) {
@@ -228,6 +240,7 @@ export default {
 				this.cartContent.includes(product)
 			) {
 				this.totalProductsNumber--;
+				this.priceAmount -= product.price;
 				return product.itemRange--;
 			}
 		},
@@ -387,6 +400,19 @@ html {
 		border: 1px solid $secondary-color;
 		overflow: auto;
 		position: absolute;
+
+		.cart-price-amount {
+			background-color: #fff;
+			border-bottom: 1px solid $secondary-color;
+			padding: 10px;
+
+			span {
+				text-transform: uppercase;
+			}
+			.total-amount {
+				color: $blue;
+			}
+		}
 
 		.cart-content-list {
 			margin: 0;
