@@ -6,6 +6,7 @@ export default [
             "Fall lightweight coat with a warm lining, belt and insulated collar.",
         gender: "male",
         price: "99",
+        itemRange: 0,
     },
     {
         id: 1,
@@ -14,6 +15,7 @@ export default [
             "Lightweight waterproof raincoat with hood. Protects against medium rain and winds.",
         gender: "unisex",
         price: "35",
+        itemRange: 0,
     },
     {
         id: 2,
@@ -21,6 +23,7 @@ export default [
         description: "Light warm gloves.",
         gender: "female",
         price: "82",
+        itemRange: 0,
     },
     {
         id: 3,
@@ -28,6 +31,7 @@ export default [
         description: "Big brown hat.",
         gender: "female",
         price: "97",
+        itemRange: 0,
     },
     {
         id: 4,
@@ -36,6 +40,7 @@ export default [
             "Hiking shoes. Suitable for long hikes and protects your feet from getting wet.",
         gender: "male",
         price: "59",
+        itemRange: 0,
     },
     {
         id: 5,
@@ -43,6 +48,7 @@ export default [
         description: "Insulated casual jacket.",
         gender: "female",
         price: "74",
+        itemRange: 0,
     },
     {
         id: 6,
@@ -50,5 +56,6 @@ export default [
         description: "Lightweight navy blue jeans for summer.",
         gender: "male",
         price: "40",
+        itemRange: 0,
     }
 ]
